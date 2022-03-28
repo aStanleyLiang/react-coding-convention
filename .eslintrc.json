@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb-typescript",
+    "react-app",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended"
+  ],
+  "plugins": ["prettier", "unused-imports"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "@typescript-eslint/no-unused-vars": ["off"],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "react/jsx-uses-react": "error",
+    "import/order": ["error"],
+    "react/jsx-boolean-value": "warn",
+    "react/jsx-key": "error",
+    "react/no-array-index-key": "warn",
+    "import/no-cycle": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "lodash",
+            "message": "Import [module] from lodash/[module] instead or use lodash-es"
+          },
+          {
+            "name": "@material-ui",
+            "message": "Import [module] from @mui/material/[module] instead"
+          },
+          {
+            "name": "@mui/material",
+            "message": "Import [module] from @mui/material/[module] instead"
+          }
+        ]
+      }
+    ]
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}
